@@ -8,20 +8,20 @@ public class Shell {
         Process process = null;
         try {
             process = Runtime.getRuntime().exec("/Users/kexiong/Tmp/Test/JavaShellExecute/processExcel.sh 1 2 3 4 5");
-            process.waitFor();
+
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     process.getInputStream()));
             String line = null;
-            while((line = in.readLine())!=null){
+            while ((line = in.readLine()) != null) {
                 System.out.println(line);
             }
-              in = new BufferedReader(new InputStreamReader(
+            in = new BufferedReader(new InputStreamReader(
                     process.getErrorStream()));
-            while((line = in.readLine())!=null){
+            while ((line = in.readLine()) != null) {
                 System.out.println(line);
             }
-           // process.waitFor();
+            process.waitFor();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
