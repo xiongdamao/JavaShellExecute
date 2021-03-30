@@ -7,7 +7,14 @@ public class Shell {
 
         Process process = null;
         try {
-            process = Runtime.getRuntime().exec("/Users/kexiong/Tmp/Test/JavaShellExecute/processExcel.sh 1 2 3 4 5");
+            String[] cmdarray = new String[] {
+                    "/Users/kexiong/Tmp/Test/JavaShellExecute/processExcel.sh",
+                    "arg1-  ,--dddd",
+                    "f  oo",
+                    "2  3123",
+                    "bar",
+                    "frrrr"};
+            process = Runtime.getRuntime().exec(cmdarray);
 
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
